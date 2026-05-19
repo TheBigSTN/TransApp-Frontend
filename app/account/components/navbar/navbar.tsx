@@ -1,6 +1,5 @@
 "use client"
 
-import "app/dashboard/components/navbar/navbar.css"
 import Link from "next/link"
 import { UserPlus, LogIn, LayoutDashboard } from "lucide-react"
 import useSWR from "swr";
@@ -14,12 +13,12 @@ export function AccountNav() {
             <div className="left" />
 
             <div className="centered flex items-center space-x-4">
-                <Link href="/about" className="navbar-text">About</Link>
-                <Link href="/account" className="navbar-text">Account</Link>
-                {session && <Link href="/account/signout" className="navbar-text">Sign out</Link>}
+                <Link href="/about" className="!navbar-text">About</Link>
+                <Link href="/account" className="!navbar-text">Account</Link>
+                {session && <Link href="/account/signout" className="!navbar-text">Sign out</Link>}
             </div>
 
-            <div className="right w-min">
+            <div className={`right w-min`}>
                 {session ? (
                     <Link href="/dashboard" className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-1 text-sm text-white">
                         <LayoutDashboard className="w-4 h-4" /> Dashboard

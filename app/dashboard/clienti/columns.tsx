@@ -4,18 +4,6 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, DeleteIcon, EditIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { deleteHandler } from "app/_helper/helper";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
-import Link from "next/link";
 import { ClientData } from "@/models/Client";
 import { KeyedMutator } from "swr";
 import { CellComponent } from "@/lib/columns";

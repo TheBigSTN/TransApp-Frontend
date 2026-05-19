@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import { GlassInput, Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -53,7 +53,7 @@ export default function Account() {
     return (
         <div className="max-w-2xl mx-auto px-8 relative z-10">
             <Tabs defaultValue="account">
-                <TabsList className="grid w-full grid-cols-2 glass-blur mb-8">
+                <TabsList className="glass grid w-full grid-cols-2 glass-blur mb-8">
                     <TabsTrigger value="account" className="text-white">Account</TabsTrigger>
                     <TabsTrigger value="password" className="text-white">Password</TabsTrigger>
                 </TabsList>
@@ -91,7 +91,7 @@ export default function Account() {
                         <div className="glass-card p-6 space-y-4">
                             <div>
                                 <Label className="text-blue-100 font-semibold">Parola Curenta</Label>
-                                <Input
+                                <GlassInput
                                     id="currentpassword"
                                     type="password"
                                     value={cpass}
@@ -104,7 +104,7 @@ export default function Account() {
                             {err && <h1 className="text-red-400 font-semibold">{err}</h1>}
                             <div>
                                 <Label className="text-blue-100 font-semibold">Parola Noua</Label>
-                                <Input
+                                <GlassInput
                                     id="password"
                                     type="password"
                                     value={pass}
@@ -116,7 +116,7 @@ export default function Account() {
                             </div>
                             <div>
                                 <Label className="text-blue-100 font-semibold">Rescrie Parola Noua</Label>
-                                <Input
+                                <GlassInput
                                     id="retipepassword"
                                     type="password"
                                     value={retiped}

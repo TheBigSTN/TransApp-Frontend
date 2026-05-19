@@ -1,11 +1,15 @@
 /* Glassmorphism Animations */
 @keyframes blob {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
@@ -21,4 +25,41 @@
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.glass-bg {
+  @apply bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 relative overflow-hidden;
+}
+
+.glass-card {
+  @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl rounded-2xl;
+}
+
+.glass-blur {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all;
+}
+
+.glass {
+  background-color: transparent !important;
+  color: white;
+
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Chrome autofill */
+.glass:-webkit-autofill,
+.glass:-webkit-autofill:hover,
+.glass:-webkit-autofill:focus {
+  -webkit-text-fill-color: white !important;
+
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+
+  transition: background-color 9999s ease-out 0s;
 }

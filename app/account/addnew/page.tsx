@@ -1,20 +1,20 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { GlassInput } from "@/components/ui/input"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuRadioGroup, DropdownMenuRadioItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { GlassInput, Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { register } from "@/models/User"
+import { addNewUser } from "@/models/User"
 import { useEffect, useState } from "react"
 
 
-export default function Register() {
+export default function AddnewPage() {
     const [nume, setnume] = useState("")
     const [prenume, setprenume] = useState("")
     const [email, setemail] = useState("")
     const [password, setpasword] = useState("")
     const [retipepassword, setretipepasword] = useState("")
-    const [companyName, setCompanyName] = useState("")
-    const [companyDescription, setCompanyDescription] = useState("")
+    const [position, setPosition] = useState("Utilizator")
     const [error, seterror] = useState("")
 
 
@@ -39,34 +39,26 @@ export default function Register() {
         }
 
         const data = new FormData(e.currentTarget)
-        console.log(data)
 
-        register(
+        addNewUser(
             nume,
             prenume,
             email,
             password,
-            companyName,
-            companyDescription
+            position
         ).then(({ statusText, status }) => {
             if (status != 200) {
                 alert(statusText)
                 return
             }
-            alert(statusText)
-
-            const callback = (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('callback') : null) || "/dashboard"
-            location.replace(callback);
-
+            alert("Ai adaugat userul cu succes")
         })
 
     }
 
     return (
-        <form
-            className="flex flex-col items-center justify-center"
-            onSubmit={handleSubmit}>
-            <div>
+        <form className="" onSubmit={handleSubmit}>
+            <div className="flex justify-center">
                 <div style={{ display: "inline-block", padding: "10px", width: "250px" }}>
                     <Label htmlFor="nume" className="text-blue-100 font-semibold">Nume</Label>
                     <GlassInput
@@ -92,7 +84,7 @@ export default function Register() {
                     />
                 </div>
             </div>
-            <div>
+            <div className="flex justify-center">
                 <div style={{ display: "inline-block", padding: "10px", width: "250px" }}>
                     <Label htmlFor="email" className="text-blue-100 font-semibold">Email</Label>
                     <GlassInput
@@ -106,21 +98,10 @@ export default function Register() {
                     />
                 </div>
                 <div style={{ display: "inline-block", padding: "10px", width: "250px" }}>
-                    <Label htmlFor="cmpName" className="text-blue-100 font-semibold">Nume Companie</Label>
-                    <GlassInput
-                        id="cmpName"
-                        type="text"
-                        placeholder="Nume Companie"
-                        value={companyName}
-                        onChange={(e) => setCompanyName(e.target.value)}
-                        required
-                    />
-                </div>
-                {/* <div style={{ display: "inline-block", padding: "10px", width: "250px" }}>
                     <DropdownMenu>
-                        <Label htmlFor="roleb">Alege Rolul</Label>
+                        <Label htmlFor="roleb" className="text-blue-100 font-semibold">Alege Rolul</Label>
                         <DropdownMenuTrigger asChild id="roleb">
-                            <Button variant="outline" className="w-full">{position}</Button>
+                            <Button variant="outline" className="w-full bg-black/30 backdrop-blur-xl text-white placeholder:text-white/50 border border-white/20">{position}</Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
                             <DropdownMenuRadioGroup defaultValue={"Utilizator"} id="role">
@@ -129,24 +110,10 @@ export default function Register() {
                             </DropdownMenuRadioGroup>
                         </DropdownMenuContent>
                     </DropdownMenu>
-                </div> */}
-            </div>
-            <div style={{ display: "inline-block", padding: "10px", width: "500px" }}>
-                <Label htmlFor="cmpDesc" className="text-blue-100 font-semibold">
-                    Descriere Companie
-                </Label>
-                <GlassInput
-                    id="cmpDesc"
-                    type="text"
-                    placeholder="Descriere Companie"
-                    value={companyDescription}
-                    onChange={(e) => setCompanyDescription(e.target.value)}
-                    required
-                // className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                />
+                </div>
             </div>
             {error && <p className="text-red-500 text-center">{error}</p>}
-            <div>
+            <div className="flex justify-center">
                 <div style={{ display: "inline-block", padding: "10px", width: "250px" }}>
                     <Label htmlFor="password" className="text-blue-100 font-semibold">Parola</Label>
                     <GlassInput
@@ -172,10 +139,10 @@ export default function Register() {
                     />
                 </div>
             </div>
-            <div>
+            <div className="flex justify-center">
                 <div style={{ display: "inline-block", padding: "10px", width: "500px", }}>
                     <Button type="submit" className="w-full">
-                        Inregistrează-te
+                        Adauga Utilizator
                     </Button>
                 </div>
             </div>

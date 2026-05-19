@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils"
 import { ChevronDown, LogOut, UserRound, UserRoundCog, UserRoundPlus } from "lucide-react"
 import * as React from "react"
 import { ReactNode, } from "react"
-import "./navbar.css"
 
 export default function Navbar({ className }: { className?: string }) {
   return (
@@ -15,6 +14,9 @@ export default function Navbar({ className }: { className?: string }) {
       {/* Centrat */}
       <ul className="centered">
         <a className={"navbar-text text-xl text-blue-100 hover:bg-white/10 hover:text-white rounded-md px-3 py-2 transition-all"} style={{ margin: "5px" }} href="/dashboard">
+          Home
+        </a>
+        <a className={"navbar-text text-xl text-blue-100 hover:bg-white/10 hover:text-white rounded-md px-3 py-2 transition-all"} style={{ margin: "5px" }} href="/about">
           About Us
         </a>
         <a className={"navbar-text text-xl text-blue-100 hover:bg-white/10 hover:text-white rounded-md px-3 py-2 transition-all"} style={{ margin: "5px" }} href="/dashboard/calendar">

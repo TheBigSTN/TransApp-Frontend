@@ -1,8 +1,7 @@
-import Navbar from "app/dashboard/components/navbar/Navbar";
 import AppSidebar from "./components/navbar/Sidebar";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import "./components/navbar/navbar.css"
 import { Suspense } from "react";
+import Navbar from "./components/navbar/Navbar";
 
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
@@ -17,7 +16,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             <header className='sticky top-0 z-50'>
                 <div className='navbar md:!hidden  wz-full sticky top-0 z-50'>
                     <div className='px-4'>
-                        <SidebarTrigger className='flex justify-center' />
+                        {/* Sidebar is still work in progress */}
+                        {/* <SidebarTrigger className='flex justify-center' /> */}
                     </div>
                 </div>
                 <Navbar className='!hidden md:!flex' />

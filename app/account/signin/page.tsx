@@ -1,6 +1,6 @@
 "use client"
 
-import "./style.css";
+import style from "./style.module.css";
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -62,7 +62,6 @@ function DashboardSignIn() {
                 type="email"
                 placeholder="m@example.com"
                 autoComplete="email"
-                className="glass"
                 required
                 disabled={isLoading}
               />
@@ -78,7 +77,6 @@ function DashboardSignIn() {
                 id="password"
                 type="password"
                 autoComplete="current-password"
-                className="glass"
                 required
                 disabled={isLoading}
               />
@@ -101,7 +99,7 @@ function DashboardSignIn() {
           src="/login.jpg"
           alt="Image"
           width="1920"
-          height="880"
+          height="680"
           className="h-full w-full object-cover dark:brightness-[0.2]"
         />
       </div>

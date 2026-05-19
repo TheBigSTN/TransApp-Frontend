@@ -109,12 +109,31 @@ export default function VerticalScroller({ visible = 3, interval = 3000 }: { vis
         }
     }, [visible, interval, paused])
 
+    useEffect(() => {
+        const container = containerRef.current
+        if (!container) return
+
+        const preventScroll = (e: Event) => {
+            e.preventDefault()
+        }
+
+        container.addEventListener("wheel", preventScroll, { passive: false })
+        container.addEventListener("touchmove", preventScroll, { passive: false })
+
+        return () => {
+            container.removeEventListener("wheel", preventScroll)
+            container.removeEventListener("touchmove", preventScroll)
+        }
+    }, [])
+
     return (
         <div
             ref={containerRef}
-            className={`flex flex-col overflow-y-auto space-y-4`}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
+            className={`flex flex-col overflow-y-auto space-y-4 no-scrollbar`}
+            // onMouseEnter={() => setPaused(true)}
+            // onMouseLeave={() => setPaused(false)}
+            onWheel={(e) => e.preventDefault()}
+            onTouchMove={(e) => e.preventDefault()}
         >
             {[...FEATURES, ...FEATURES].map((f, i) => {
                 const Icon = f.icon

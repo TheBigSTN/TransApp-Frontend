@@ -3,8 +3,7 @@
 import { LicentaData } from "@/models/Licenta";
 import { KeyedMutator } from "swr";
 import { Form, FormFieldProps, InferFormData } from "./Form";
-import { useRouter } from "next/navigation";
-import { add_editHandler } from "app/_helper/helper copy";
+import { add_editHandler } from "../../_helper/helper copy";
 
 interface LicentaFormProps {
   defaultValues?: LicentaData;

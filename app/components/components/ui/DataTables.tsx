@@ -30,7 +30,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { deleteHandler } from "app/_helper/helper";
 import {
   Dialog,
   DialogContent,
@@ -45,6 +44,7 @@ import Link from "next/link";
 import { addAnexa } from "@/models/Anexa";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { deleteHandler } from "../../../_helper/helper";
 
 const buttonStyle = {
   background: "white",

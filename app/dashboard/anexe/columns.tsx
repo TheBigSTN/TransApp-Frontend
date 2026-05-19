@@ -5,10 +5,10 @@ import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown, DeleteIcon, EditIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { deleteHandler, generateAnexa, validateAnexa } from "app/_helper/helper";
 import { AnexaData } from "@/models/Anexa";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
 import { KeyedMutator } from "swr";
+import { deleteHandler, generateAnexa, validateAnexa } from "../../_helper/helper";
 
 
 export const columns = (mutate: KeyedMutator<AnexaData[]>, currentValues: AnexaData[]): ColumnDef<AnexaData>[] => [
@@ -118,12 +118,11 @@ export const columns = (mutate: KeyedMutator<AnexaData[]>, currentValues: AnexaD
         justifyContent: "center",
       };
 
-      const buttonStyle = {
-        background: "white",
-        color: "black",
+      const buttonStyle: React.CSSProperties = {
+        background: "transparent",
         fontSize: "0.8rem",
         padding: "0.5rem",
-        border: "none",
+        border: "val(--primary)",
         borderRadius: "4px",
         cursor: "pointer",
         marginLeft: "-4px",
@@ -211,7 +210,7 @@ export const columns = (mutate: KeyedMutator<AnexaData[]>, currentValues: AnexaD
             )}
           </div>
           {/* Edit button */}
-          <div>
+          {/* <div>
             <Link href={`/anexa/edit/${anexa.id}`}>
               <Button style={buttonStyle} onClick={() => {
 
@@ -220,7 +219,7 @@ export const columns = (mutate: KeyedMutator<AnexaData[]>, currentValues: AnexaD
                 <EditIcon size={16} color="black" />
               </Button>
             </Link>
-          </div>
+          </div> */}
           {/* Delete button */}
           <Dialog>
             <DialogTrigger asChild>

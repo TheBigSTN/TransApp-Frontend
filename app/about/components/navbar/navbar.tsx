@@ -4,7 +4,7 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 import * as React from "react"
 import { ReactNode, } from "react"
-import "./navbar.css"
+import style from "./navbar.module.css"
 import { ChevronDown, LayoutDashboard, LogOut, UserRound, UserRoundCog, UserRoundPlus } from "lucide-react"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import useSWR from "swr"
@@ -14,29 +14,29 @@ export default function Navbar({ className }: { className?: string }) {
     const { data: session } = useSWR("session", isLogedIn);
 
     return (
-        <nav className={cn("navbar", className)}>
+        <nav className={cn(style.navbar, className)}>
             {/* Stanga */}
-            <div className="left" />
+            <div className={style.left} />
             {/* Centrat */}
-            <ul className="centered">
-                <Link className={"navbar-text text-xl hover:bg-accent"} style={{ margin: "5px" }} href="/about">
-                    Home
+            <ul className={style.centered}>
+                <Link className={cn(style["navbar-text"], "!text-xl hover:bg-accent")} style={{ margin: "5px" }} href="/about">
+                    About Us
                 </Link>
-                {/* <Link className={"navbar-text text-xl hover:bg-accent"} style={{ margin: "5px" }} href="/dashboard/calendar">
+                {/* <Link className={cn(style["navbar-text"], "text-xl hover:bg-accent")} style={{ margin: "5px" }} href="/dashboard/calendar">
                     Calendar
                 </Link> */}
                 {session &&
-                    <Link href="/dashboard" className="navbar-text text-xl hover:bg-accent" style={{ margin: "5px" }} >
+                    <Link href="/dashboard" className={cn(style["navbar-text"], "text-xl hover:bg-accent")} style={{ margin: "5px" }} >
                         <LayoutDashboard className="w-4 h-4" /> Dashboard
                     </Link>
                 }
             </ul>
             {/* La dreapta */}
-            <div className="right w-min">
+            <div className={cn(style.right, "w-min")}>
                 {session ? (
                     <DropdownMenu>
                         <DropdownMenuTrigger
-                            className={"navbar-text text-xl hover:bg-accent group"}>
+                            className={cn(style["navbar-text"], "text-xl hover:bg-accent group")}>
                             <UserRound /> Cont <ChevronDown
                                 className="relative top-[1px] ml-1 h-3 w-3 transition duration-200 group-data-[state=open]:rotate-180"
                                 aria-hidden="true"
@@ -63,7 +63,7 @@ export default function Navbar({ className }: { className?: string }) {
                         </DropdownMenuContent>
                     </DropdownMenu>
                 ) : (
-                    <Link href="/account/signin" className="navbar-text text-xl hover:bg-accent" style={{ margin: "5px" }} >
+                    <Link href="/account/signin" className={cn(style['navbar-text'], "!text-xl hover:bg-accent")} style={{ margin: "5px" }} >
                         <LayoutDashboard className="w-4 h-4" /> Sign in
                     </Link>
                 )}

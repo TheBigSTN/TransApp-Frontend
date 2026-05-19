@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Row } from "@tanstack/react-table";
-import { deleteHandler } from "app/_helper/helper copy";
 import { DeleteIcon, EditIcon } from "lucide-react";
 import { useState } from "react";
 import { KeyedMutator } from "swr";
+import { deleteHandler } from "../../_helper/helper copy";
 
 type Model = 'sofer' | 'masina' | 'client' | 'cursa' | 'alimentare' | 'licenta' | 'anexa'
 

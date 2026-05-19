@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './glassmorphism.css';
+@import './navbar.css';
 
 @layer base {
   :root {
@@ -98,20 +99,21 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
 }
 
 /* Glassmorphism Utility Classes */
-.glass-bg {
-  @apply bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 relative overflow-hidden;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari */
 }
 
-.glass-card {
-  @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-xl rounded-2xl;
-}
-
-.glass-blur {
-  @apply bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all;
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE, Edge vechi */
+  scrollbar-width: none;
+  /* Firefox */
 }

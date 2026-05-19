@@ -3,7 +3,7 @@
 import { SoferData } from "@/models/Sofer";
 import { KeyedMutator } from "swr";
 import { Form, FormFieldProps, InferFormData } from "./Form";
-import { add_editHandler } from "app/_helper/helper copy";
+import { add_editHandler } from "../../_helper/helper copy";
 
 interface SoferForm {
   currentValues: SoferData[]

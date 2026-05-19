@@ -9,46 +9,7 @@ import pkg from '../../package.json'
 import { CalendarDays, Users, Truck, Fuel, FileCheck, CreditCard, ArrowRight, FileText, LayoutDashboard } from 'lucide-react'
 import VerticalScroller from './components/VerticalScroller'
 
-const features = [
-  {
-    icon: CalendarDays,
-    title: "Calendar Management",
-    description: "Interactive calendar with integrated scheduling for trips, licenses, and fuel management."
-  },
-  {
-    icon: Users,
-    title: "Driver Management",
-    description: "Complete driver profiles, license tracking, and assignment system."
-  },
-  {
-    icon: Truck,
-    title: "Vehicle Fleet",
-    description: "Comprehensive vehicle management with maintenance tracking and license monitoring."
-  },
-  {
-    icon: Fuel,
-    title: "Fuel Tracking",
-    description: "Detailed fuel consumption monitoring and cost analysis."
-  },
-  {
-    icon: FileCheck,
-    title: "License Management",
-    description: "Automated license tracking and renewal notifications for vehicles and drivers."
-  },
-  {
-    icon: CreditCard,
-    title: "Billing & Invoicing",
-    description: "Streamlined billing process with automated invoice generation."
-  }
-]
 
-const techStack = {
-  frontend: ["Next.js 14", "React 18", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
-  auth: ["NextAuth.js", "JWT"],
-  dataManagement: ["React Query", "SWR", "Zod", "React Hook Form"],
-  ui: ["Radix UI", "Chakra UI", "Lucide Icons"],
-  tools: ["ESLint", "TypeScript", "PostCSS"]
-}
 
 export default function AboutPage() {
   return (
@@ -75,7 +36,7 @@ export default function AboutPage() {
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">
-                    <Link href="/account/addnew" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sky-700 font-semibold shadow hover:scale-105 transition-transform">
+                    <Link href="/account/register" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sky-700 font-semibold shadow hover:scale-105 transition-transform">
                       Create an account <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link href="/account/signin" className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-2 text-white font-semibold hover:bg-white/10 transition">

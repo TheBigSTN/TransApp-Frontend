@@ -1,6 +1,5 @@
 "use client";
 
-import "app/account/signin/style.css"
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -41,12 +40,13 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { deleteHandler } from "app/_helper/helper copy";
+// import { deleteHandler } from "app/_helper/helper copy";
 import { ChevronDown, SquarePlusIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 import { useState } from "react";
 import useSWR, { KeyedMutator } from "swr";
+import { deleteHandler } from "../../_helper/helper copy";
 
 type Model = 'sofer' | 'masina' | 'client' | 'cursa' | 'alimentare' | 'licenta' | 'anexa' | "calendar"
 
