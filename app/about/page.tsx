@@ -28,19 +28,19 @@ export default function AboutPage() {
             <div className="relative z-10 max-w-5xl mx-auto">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div>
-                  <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">{pkg.name.toUpperCase()}</h1>
+                  <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-white drop-shadow-lg">Trans App</h1>
                   <p className="mt-3 text-white/90 text-lg font-medium drop-shadow max-w-prose">
-                    A comprehensive transportation management system built with modern web technologies.
-                    Designed to streamline fleet operations, driver management, and business administration
-                    for transportation companies. Below you will find a quick overview of features and the stack we use.
+                    Un sistem complet de management al transportului construit cu tehnologii web moderne.
+                    Proiectat pentru a eficientiza operațiunile flotei, gestionarea șoferilor și administrarea afacerii
+                    pentru companiile de transport. Mai jos vei găsi o prezentare rapidă a funcționalităților și a tehnologiilor folosite.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link href="/account/register" className="inline-flex items-center gap-2 rounded-md bg-white px-4 py-2 text-sky-700 font-semibold shadow hover:scale-105 transition-transform">
-                      Create an account <ArrowRight className="w-4 h-4" />
+                      Creează un cont <ArrowRight className="w-4 h-4" />
                     </Link>
                     <Link href="/account/signin" className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-2 text-white font-semibold hover:bg-white/10 transition">
-                      Sign in
+                      Autentificare
                     </Link>
                   </div>
                 </div>
@@ -61,32 +61,32 @@ export default function AboutPage() {
 
       {/* Get Started */}
       <section id="get-started">
-        <h2 className="text-2xl font-semibold">Get Started</h2>
+        <h2 className="text-2xl glass-text">Începe</h2>
         <div className="space-y-8 mt-4">
-          <div className="prose dark:prose-invert max-w-none">
-            <p>Follow these steps to get started with our transport management system:</p>
+          <div className="prose dark:prose-invert max-w-none ">
+            <p>Urmează acești pași pentru a începe utilizarea sistemului nostru de management al transportului:</p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            <Card className="p-6 glass-card" style={{ animationDelay: `0ms` }}>
+            <Card className="p-6 glass" style={{ animationDelay: `0ms` }}>
               <div className="space-y-4">
-                <h3 className="font-semibold text-lg">New Users</h3>
-                <p className="text-sm text-muted-foreground">Create an account to access all features of the transport management system.</p>
+                <h3 className="glass-text text-lg">Utilizatori noi</h3>
+                <p className="text-sm text-muted-foreground">Creează un cont pentru a accesa toate funcționalitățile sistemului de management al transportului.</p>
                 <div className="flex gap-4">
                   <Button asChild>
-                    <Link href="/account/register">Create Account <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    <Link href="/account/register">Creează cont <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </div>
               </div>
             </Card>
 
-            <Card className="p-6 glass-card" style={{ animationDelay: `120ms` }}>
+            <Card className="p-6 glass" style={{ animationDelay: `120ms` }}>
               <div className="space-y-4">
-                <h3 className="font-semibold text-lg">Existing Users</h3>
-                <p className="text-sm text-muted-foreground">Already have an account? Sign in to access your dashboard.</p>
+                <h3 className="glass-text text-lg">Utilizatori existenți</h3>
+                <p className="text-sm text-muted-foreground">Ai deja un cont? Autentifică-te pentru a accesa panoul de control.</p>
                 <div className="flex gap-4">
                   <Button asChild variant="secondary">
-                    <Link href="/account/signin">Sign In <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    <Link href="/account/signin">Autentificare<ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </div>
               </div>

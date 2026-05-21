@@ -42,9 +42,9 @@ export default function LicentaForm({ defaultValues, currentValues, mutate, clos
     {
       label: "Tip",
       id: "tip",
-      fieldType: "input",
+      fieldType: "dropdown",
       type: "text",
-      placeholder: "Asigurare",
+      options: ["ROVINIETA", "LICENTATRANSPORT", "RCA", "ITP", "CASCO"],
       required: true,
       defaultValue: defaultValues?.tip,
     },

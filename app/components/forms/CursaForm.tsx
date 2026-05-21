@@ -32,14 +32,6 @@ export default function CursaForm({ defaultValues, currentValues, mutate, close 
       defaultValue: defaultValues?.dataEfectuare,
     },
     {
-      label: "Anexă",
-      id: "idAnexa",
-      fieldType: "input",
-      type: "number",
-      placeholder: "123",
-      defaultValue: defaultValues?.idAnexa ?? undefined,
-    },
-    {
       label: "Adresă Livrare",
       id: "livrare",
       fieldType: "input",
@@ -47,6 +39,31 @@ export default function CursaForm({ defaultValues, currentValues, mutate, close 
       placeholder: "Str. Exemplu, nr. 1",
       required: true,
       defaultValue: defaultValues?.livrare,
+    },
+    {
+      label: "Numar Masina",
+      id: "masinaNumar",
+      fieldType: "input",
+      type: "text",
+      placeholder: "B 123 ABC",
+      required: true,
+      defaultValue: defaultValues?.masinaNumar,
+    },
+    {
+      label: "CUI Client",
+      id: "cuiClient",
+      fieldType: "input",
+      type: "text",
+      placeholder: "RO12345678",
+      required: true,
+    },
+    {
+      label: "CNP Sofer",
+      id: "cnpSofer",
+      fieldType: "input",
+      type: "text",
+      placeholder: "1234567890123",
+      required: true,
     },
     {
       label: "Tarif",
@@ -71,12 +88,12 @@ export default function CursaForm({ defaultValues, currentValues, mutate, close 
       idMasina: defaultValues?.idMasina ?? 0,
       idSofer: defaultValues?.idSofer ?? 0,
       idClient: defaultValues?.idClient ?? 0,
-      idAnexa: Number(data.idAnexa) || null,
+      idAnexa: null,
       livrare: data.livrare,
       tarif: Number(data.tarif),
-      masinaNumar: "",
-      numeSofer: "",
-      numeClient: "",
+      masinaNumar: defaultValues?.masinaNumar ?? data.masinaNumar,
+      numeSofer: defaultValues?.numeSofer ?? data.cnpSofer,
+      numeClient: defaultValues?.numeClient ?? data.cuiClient,
     };
     try {
       if (payload.id === 0)

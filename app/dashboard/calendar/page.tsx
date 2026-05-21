@@ -47,19 +47,27 @@ export default function DataTablePage() {
     }, [selectedDate]);
 
     return (
-        <div>
-            <div className="flex items-center justify-between mb-4">
-                <h1 className=" flex text-xl font-bold mb-0 text-center">Calendar săptămânal</h1>
-                <DatePicker onDateChange={handleDateChange} />
+        <div className="h-screen flex flex-col pt-16">
+            <div className="max-w-7xl mx-auto w-full px-4 flex flex-col flex-1">
+
+                <div className="flex items-center justify-between mb-4">
+                    <h1 className="text-xl font-bold text-center">Calendar săptămânal</h1>
+                    <DatePicker onDateChange={handleDateChange} />
+                </div>
+
+                {isLoading && <p className="text-center">Datele sunt în curs de încărcare...</p>}
+                {error && <p className="text-red-500 text-center">{error}</p>}
+
+                <div className="flex-1">
+                    <DataTable
+                        columns={curentColumns}
+                        data={data}
+                        model="calendar"
+                        idKey="id_masina"
+                    />
+                </div>
+
             </div>
-            {isLoading && <p className="text-center">Datele sunt în curs de încărcare...</p>}
-            {error && <p className="text-red-500 text-center">{error}</p>}
-            <DataTable
-                columns={curentColumns}
-                data={data}
-                model="calendar"
-                idKey="id_masina"
-            />
         </div>
     );
 };

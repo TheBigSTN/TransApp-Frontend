@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogOverlay, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Row } from "@tanstack/react-table";
 import { DeleteIcon, EditIcon } from "lucide-react";
 import { useState } from "react";
@@ -59,15 +59,15 @@ export function CellComponent<T extends { id: number }>({ row, Form, mutate, cur
                 <DialogTrigger style={buttonStyle}>
                     <DeleteIcon size={16} stroke="currentColor" />
                 </DialogTrigger>
-                <DialogContent>
-                    <DialogHeader>
+                <DialogContent className="glass-card bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl rounded-2xl text-white">
+                    <DialogHeader className="text-white">
                         <DialogTitle>Confirmare</DialogTitle>
-                        <DialogClose />
+                        <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus:outline-none text-white" />
                     </DialogHeader>
                     <DialogDescription>
                         Are you sure you want to delete the selected rows?
                     </DialogDescription>
-                    <DialogFooter>
+                    <DialogFooter className="flex gap-2">
                         <Button onClick={() => {
                             mutate(
                                 deleteHandler(
@@ -83,6 +83,7 @@ export function CellComponent<T extends { id: number }>({ row, Form, mutate, cur
                         <DialogClose>Anulează</DialogClose>
                     </DialogFooter>
                 </DialogContent>
+                <DialogOverlay className="bg-black/30 backdrop-blur-sm" />
             </Dialog>
         </div>
     );

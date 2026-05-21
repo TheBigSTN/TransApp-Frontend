@@ -32,7 +32,7 @@ export default async function DashboardPage() {
         <section className="text-center space-y-4">
           <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 hover:bg-white/20 transition-all">
             <Building2 className="w-5 h-5 text-blue-400" />
-            <span className="text-sm font-semibold text-white">About Our Company</span>
+            <span className="text-sm font-semibold text-white">Despre Compania Noastră</span>
           </div>
           <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">{data.name}</h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto drop-shadow">{data.description}</p>
@@ -42,7 +42,7 @@ export default async function DashboardPage() {
             <Link href="/dashboard/edit">
               <button className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
                 <Edit3 className="w-5 h-5" />
-                Manage Company Data
+                Gestionează Datele Companiei
               </button>
             </Link>
           </div>
@@ -51,10 +51,10 @@ export default async function DashboardPage() {
         {/* Quick Stats with Glassmorphism */}
         {companyInfo && <section className="grid grid-cols-1 md:grid-cols-4 gap-4">
           {[
-            { value: companyInfo.foundedYear, label: 'Year Founded', icon: '📅' },
-            { value: companyInfo.employees, label: 'Team Members', icon: '👥' },
-            { value: services.length, label: 'Core Services', icon: '⚙️' },
-            { value: 'EU', label: 'Operating Region', icon: '🌍' },
+            { value: companyInfo.foundedYear, label: 'An Fondare', icon: '📅' },
+            { value: companyInfo.employees, label: 'Membrii Echipei', icon: '👥' },
+            { value: services.length, label: 'Servicii Principale', icon: '⚙️' },
+            { value: 'EU', label: 'Regiunea de Operare', icon: '🌍' },
           ].map((stat, i) => (
             <div
               key={i}
@@ -72,14 +72,14 @@ export default async function DashboardPage() {
           <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
             <div className="flex items-center gap-3 mb-4">
               <Target className="w-6 h-6 text-blue-400" />
-              <h2 className="text-2xl font-bold text-white">Our Mission</h2>
+              <h2 className="text-2xl font-bold text-white">Misiunea Noastră</h2>
             </div>
             <p className="text-blue-50 leading-relaxed">{companyInfo.mission}</p>
           </div>
           <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
             <div className="flex items-center gap-3 mb-4">
               <Zap className="w-6 h-6 text-amber-400" />
-              <h2 className="text-2xl font-bold text-white">Our Vision</h2>
+              <h2 className="text-2xl font-bold text-white">Viziunea Noastră</h2>
             </div>
             <p className="text-blue-50 leading-relaxed">{companyInfo.vision}</p>
           </div>
@@ -87,7 +87,7 @@ export default async function DashboardPage() {
 
         {/* Core Values */}
         {values.length > 0 && <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-white">Core Values</h2>
+          <h2 className="text-3xl font-bold text-white">Valori Centrale</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, i) => {
               const IconComponent = iconMap[value.icon]
@@ -107,7 +107,7 @@ export default async function DashboardPage() {
 
         {/* Services */}
         {services.length > 0 && <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-white">What We Offer</h2>
+          <h2 className="text-3xl font-bold text-white">Serviciile Noastre</h2>
           <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {services.map((service, i) => (
@@ -122,13 +122,13 @@ export default async function DashboardPage() {
 
         {/* Team Structure */}
         {teamSize.length > 0 && <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-white">Our Team</h2>
+          <h2 className="text-3xl font-bold text-white">Echipa Noastră</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {teamSize.map((team, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
                 <div className="flex items-center justify-between mb-4">
                   <Users className="w-5 h-5 text-blue-400" />
-                  <Badge className="bg-blue-400/30 text-blue-100 border border-blue-400/50">{team.count} people</Badge>
+                  <Badge className="bg-blue-400/30 text-blue-100 border border-blue-400/50">{team.count} persoane</Badge>
                 </div>
                 <h3 className="font-bold text-lg text-white mb-1">{team.role}</h3>
                 <p className="text-sm text-blue-100">{team.description}</p>
@@ -139,11 +139,11 @@ export default async function DashboardPage() {
 
         {/* Contact Info */}
         {companyInfo && <section className="space-y-6">
-          <h2 className="text-3xl font-bold text-white">Get In Touch</h2>
+          <h2 className="text-3xl font-bold text-white">Informații de Contact</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
               <MapPin className="w-6 h-6 text-red-400 mb-4" />
-              <h3 className="font-bold text-white mb-2">Headquarters</h3>
+              <h3 className="font-bold text-white mb-2">Sediul Principal</h3>
               <p className="text-blue-100 text-sm">{companyInfo.headquarters}</p>
             </div>
             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
@@ -153,18 +153,18 @@ export default async function DashboardPage() {
             </div>
             <div className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
               <Phone className="w-6 h-6 text-green-400 mb-4" />
-              <h3 className="font-bold text-white mb-2">Phone</h3>
+              <h3 className="font-bold text-white mb-2">Telefon</h3>
               <p className="text-blue-100 text-sm">+40 (21) 123-4567</p>
             </div>
           </div>
         </section>}
 
         {/* Footer Message */}
-        {companyInfo && <section className="text-center py-8 border-t border-white/10">
+        {/* {companyInfo && <section className="text-center py-8 border-t border-white/10">
           <p className="text-blue-100">
-            Join <span className="font-semibold text-white">{companyInfo.employees}</span> amazing team members who are transforming the logistics industry
+            Alăturați-vă celor <span className="font-semibold text-white">{companyInfo.employees}</span> membri de echipă extraordinari care transformă industria logisticii
           </p>
-        </section>}
+        </section>} */}
       </div>
     </div>
   )

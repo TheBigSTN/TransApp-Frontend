@@ -53,11 +53,15 @@ export const Form = <T extends readonly FormFieldProps[]>({
         Object.keys(customComponents).includes('submit');
 
     return (
-        <form {...props} style={{ display: "flex", flexWrap: "wrap", maxWidth: "500px", ...style }} onSubmit={handleSubmit}>
+        <form
+            {...props}
+            style={{ display: "flex", flexWrap: "wrap", maxWidth: "500px", ...style }}
+            onSubmit={handleSubmit}
+        >
             {fields.map((field) => {
                 if (customComponents[field.id]) {
                     return (
-                        <div key={field.id} style={{ flex: "1 1 250px", padding: "10px", boxSizing: "border-box" }}>
+                        <div key={field.id} className="flex-[1_1_250px] p-2 box-border">
                             {customComponents[field.id]}
                         </div>
                     );
@@ -67,21 +71,21 @@ export const Form = <T extends readonly FormFieldProps[]>({
                     case 'dropdown':
                         return <DropdownField key={field.id} {...field} />;
                     case 'submit':
-                        return <SubmitButton key={field.id} buttonText={field.buttonText} />;
+                        return <SubmitButton key={field.id} buttonText={field.buttonText} fieldnum={fields.length - (hasSubmitButton ? 1 : 0)} />;
                     default:
                         return <InputField key={field.id} {...field} />;
                 }
             })}
-            {!hasSubmitButton && <SubmitButton />}
+            {!hasSubmitButton && <SubmitButton fieldnum={fields.length - (hasSubmitButton ? 1 : 0)} />}
         </form>
     );
 };
 
 export const InputField = ({ label, fieldType, type = 'text', ...props }: FormFieldProps) => {
     return (
-        <div style={{ flex: "1 1 250px", padding: "10px", boxSizing: "border-box" }}>
-            <Label htmlFor={props.id}>{label}</Label>
-            <Input type={type} {...props} />
+        <div className="flex-[1_1_250px] p-2 box-border">
+            <Label htmlFor={props.id} className="text-blue-100 font-semibold">{label}</Label>
+            <Input type={type} {...props} className="glass w-full border-0" />
         </div>
     );
 };
@@ -101,16 +105,16 @@ export const DropdownField = ({ label, id, options = [], defaultValue, onChange 
     };
 
     return (
-        <div style={{ flex: "1 1 250px", padding: "10px", boxSizing: "border-box" }}>
+        <div className="flex-[1_1_250px] p-2 box-border">
             <Label htmlFor={id}>{label}</Label>
             <input type="hidden" id={id} value={selected} />
             <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full glass-blur">
                         {selected || "Select..."}
                     </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-full">
+                <DropdownMenuContent className="w-full  glass-card">
                     <DropdownMenuRadioGroup value={selected} onValueChange={handleSelect}>
                         {options.map((option) => (
                             <DropdownMenuRadioItem key={option} value={option}>
@@ -124,9 +128,12 @@ export const DropdownField = ({ label, id, options = [], defaultValue, onChange 
     );
 };
 
-const SubmitButton = ({ buttonText = "Salvează" }: { buttonText?: string }) => (
-    <div style={{ flex: "1 1 250px", padding: "10px", boxSizing: "border-box" }}>
-        <Button type="submit" className="w-full">
+const SubmitButton = ({ buttonText = "Salvează", fieldnum }: { buttonText?: string, fieldnum: number }) => (
+    <div className="flex-[1_1_250px] p-2 box-border">
+        {fieldnum % 2 == 1 &&
+            <Label className="text-transparent">Hidden</Label>
+        }
+        <Button type="submit" className="w-full glass-blur">
             {buttonText}
         </Button>
     </div>

@@ -10,13 +10,22 @@ type Feature = {
     description: string
 }
 
+// const FEATURES: Feature[] = [
+//     { icon: CalendarDays, title: 'Calendar Management', description: 'Interactive calendar with integrated scheduling for trips, licenses, and fuel management.' },
+//     { icon: Users, title: 'Driver Management', description: 'Complete driver profiles, license tracking, and assignment system.' },
+//     { icon: Truck, title: 'Vehicle Fleet', description: 'Comprehensive vehicle management with maintenance tracking and license monitoring.' },
+//     { icon: Fuel, title: 'Fuel Tracking', description: 'Detailed fuel consumption monitoring and cost analysis.' },
+//     { icon: FileCheck, title: 'License Management', description: 'Automated license tracking and renewal notifications for vehicles and drivers.' },
+//     { icon: CreditCard, title: 'Billing & Invoicing', description: 'Streamlined billing process with automated invoice generation.' },
+// ]
+
 const FEATURES: Feature[] = [
-    { icon: CalendarDays, title: 'Calendar Management', description: 'Interactive calendar with integrated scheduling for trips, licenses, and fuel management.' },
-    { icon: Users, title: 'Driver Management', description: 'Complete driver profiles, license tracking, and assignment system.' },
-    { icon: Truck, title: 'Vehicle Fleet', description: 'Comprehensive vehicle management with maintenance tracking and license monitoring.' },
-    { icon: Fuel, title: 'Fuel Tracking', description: 'Detailed fuel consumption monitoring and cost analysis.' },
-    { icon: FileCheck, title: 'License Management', description: 'Automated license tracking and renewal notifications for vehicles and drivers.' },
-    { icon: CreditCard, title: 'Billing & Invoicing', description: 'Streamlined billing process with automated invoice generation.' },
+    { icon: CalendarDays, title: 'Management calendar', description: 'Calendar interactiv cu programare integrată pentru curse, licențe și gestionarea combustibilului.' },
+    { icon: Users, title: 'Gestionarea șoferilor', description: 'Profiluri complete ale șoferilor, urmărirea licențelor și sistem de alocare.' },
+    { icon: Truck, title: 'Flotă de vehicule', description: 'Gestionarea completă a vehiculelor cu monitorizare a întreținerii și a licențelor.' },
+    { icon: Fuel, title: 'Urmărirea combustibilului', description: 'Monitorizare detaliată a consumului de combustibil și analiză a costurilor.' },
+    { icon: FileCheck, title: 'Gestionarea licențelor', description: 'Urmărirea automată a licențelor și notificări de reînnoire pentru vehicule și șoferi.' },
+    { icon: CreditCard, title: 'Facturare & Invoicing', description: 'Proces de facturare simplificat cu generare automată de facturi.' },
 ]
 
 export default function VerticalScroller({ visible = 3, interval = 3000 }: { visible?: number, interval?: number }) {

@@ -65,7 +65,8 @@ export function DatePicker({ onDateChange }: DatePickerProps) {
                       variant={"outline"}
                       className={cn(
                         "w-[240px] pl-3 text-left font-normal",
-                        !field.value && "text-muted-foreground"
+                        !field.value && "text-muted-foreground",
+                        "glass"
                       )}
                     >
                       {field.value ? (
@@ -77,7 +78,7 @@ export function DatePicker({ onDateChange }: DatePickerProps) {
                     </Button>
                   </FormControl>
                 </PopoverTrigger>
-                <PopoverContent className="w-auto p-0" align="start">
+                <PopoverContent className="w-auto p-0 bg-white/10 dark:bg-black/20 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl w-auto p-0 glass" align="start">
                   <Calendar
                     mode="single"
                     selected={field.value || new Date()}
@@ -89,6 +90,7 @@ export function DatePicker({ onDateChange }: DatePickerProps) {
                       }
                     }}
                     initialFocus
+                    className="p-3 backdrop-blur-xl rounded-2xl"
                   />
                 </PopoverContent>
                 <PopoverClose></PopoverClose>

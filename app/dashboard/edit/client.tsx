@@ -113,14 +113,14 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                     }
                 })
             } catch (error) {
-                alert('Error updating company info')
+                alert('Eroare la actualizarea informațiilor companiei')
             }
         })
     }
 
     const handleAddValue = () => {
         if (!valueForm.title || !valueForm.description) {
-            alert('Please fill in all fields')
+            alert('Vă rugăm completați toate câmpurile')
             return
         }
         startTransition(async () => {
@@ -135,7 +135,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                 })
                 setValueForm({ icon: iconOptions[0], title: '', description: '' })
             } catch (error) {
-                alert('Error adding value')
+                alert('Eroare la adăugarea valorii')
             }
         })
     }
@@ -152,7 +152,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                     }
                 })
             } catch (error) {
-                alert('Error deleting value')
+                alert('Eroare la ștergerea valorii')
             }
         })
     }
@@ -174,7 +174,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                 })
                 setTeamForm({ role: '', count: '', description: '' })
             } catch (error) {
-                alert('Error adding team department')
+                alert('Eroare la adăugarea departamentului de echipă')
             }
         })
     }
@@ -191,14 +191,14 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                     }
                 })
             } catch (error) {
-                alert('Error deleting team department')
+                alert('Eroare la ștergerea departamentului de echipă')
             }
         })
     }
 
     const handleAddService = () => {
         if (!serviceForm.trim()) {
-            alert('Please enter a service name')
+            alert('Vă rugăm introduceți un nume de serviciu')
             return
         }
         startTransition(async () => {
@@ -213,7 +213,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                 })
                 setServiceForm('')
             } catch (error) {
-                alert('Error adding service')
+                alert('Eroare la adăugarea serviciului')
             }
         })
     }
@@ -230,7 +230,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                     }
                 })
             } catch (error) {
-                alert('Error deleting service')
+                alert('Eroare la ștergerea serviciului')
             }
         })
     }
@@ -242,7 +242,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                 <div className="flex items-center justify-center min-h-screen">
                     <div className="text-center space-y-4">
                         <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-400 mx-auto"></div>
-                        <p className="text-xl text-blue-100">Loading company data...</p>
+                        <p className="text-xl text-blue-100">Se încarcă datele companiei...</p>
                     </div>
                 </div>
             )}
@@ -259,8 +259,8 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                     <div className="max-w-6xl mx-auto px-8 py-12 space-y-8 relative z-10">
                         {/* Header */}
                         <section className="text-center space-y-4">
-                            <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">Manage Company Data</h1>
-                            <p className="text-xl text-blue-100">Edit company information, values, team, and services</p>
+                            <h1 className="text-5xl font-extrabold text-white drop-shadow-lg">Gestionați datele companiei</h1>
+                            <p className="text-xl text-blue-100">Editați informații despre companie, valori, echipă și servicii</p>
                         </section>
 
                         {/* Navigation Tabs */}
@@ -284,11 +284,11 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                             {/* Company Info Tab */}
                             {activeTab === 'info' && (
                                 <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 space-y-6">
-                                    <h2 className="text-3xl font-bold text-white">Company Information</h2>
+                                    <h2 className="text-3xl font-bold text-white">Informații despre companie</h2>
 
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Founded Year</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Anul înființării</label>
                                             <Input
                                                 type="number"
                                                 value={infoForm.foundedYear}
@@ -298,7 +298,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Employees</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Angajați</label>
                                             <Input
                                                 value={infoForm.employees}
                                                 onChange={(e) => setInfoForm({ ...infoForm, employees: e.target.value })}
@@ -307,7 +307,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         </div>
 
                                         <div className="md:col-span-2">
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Headquarters</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Sediul central</label>
                                             <Input
                                                 value={infoForm.headquarters}
                                                 onChange={(e) => setInfoForm({ ...infoForm, headquarters: e.target.value })}
@@ -316,7 +316,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         </div>
 
                                         <div className="md:col-span-2">
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Mission</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Misiune</label>
                                             <textarea
                                                 value={infoForm.mission}
                                                 onChange={(e) => setInfoForm({ ...infoForm, mission: e.target.value })}
@@ -326,7 +326,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         </div>
 
                                         <div className="md:col-span-2">
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Vision</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Viziune</label>
                                             <textarea
                                                 value={infoForm.vision}
                                                 onChange={(e) => setInfoForm({ ...infoForm, vision: e.target.value })}
@@ -342,7 +342,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-all"
                                     >
                                         {isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-                                        Update Company Info
+                                        Actualizați informații despre companie
                                     </Button>
                                 </div>
                             )}
@@ -352,10 +352,10 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                 <div className="space-y-6">
                                     {/* Add New Value */}
                                     <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 space-y-4">
-                                        <h2 className="text-2xl font-bold text-white">Add New Value</h2>
+                                        <h2 className="text-2xl font-bold text-white">Adăugați o nouă valoare</h2>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Icon</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Pictogramă</label>
                                             <select
                                                 value={valueForm.icon}
                                                 onChange={(e) => setValueForm({ ...valueForm, icon: e.target.value })}
@@ -368,21 +368,21 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Title</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Titlu</label>
                                             <Input
                                                 value={valueForm.title}
                                                 onChange={(e) => setValueForm({ ...valueForm, title: e.target.value })}
-                                                placeholder="e.g., Innovation"
+                                                placeholder="de exemplu, Inovație"
                                                 className="bg-white/10 border-white/20 text-white placeholder-white/50"
                                             />
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Description</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Descriere</label>
                                             <textarea
                                                 value={valueForm.description}
                                                 onChange={(e) => setValueForm({ ...valueForm, description: e.target.value })}
-                                                placeholder="Describe this value..."
+                                                placeholder="Descrieți această valoare..."
                                                 className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                                 rows={3}
                                             />
@@ -395,7 +395,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         >
                                             {isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                                             <Plus className="w-4 h-4 mr-2" />
-                                            Add Value
+                                            Adăugați valoare
                                         </Button>
                                     </div>
 
@@ -406,7 +406,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                                 <div>
                                                     <h3 className="text-lg font-bold text-white">{value.title}</h3>
                                                     <p className="text-blue-100 text-sm">{value.description}</p>
-                                                    <p className="text-white/50 text-xs mt-2">Icon: {value.icon}</p>
+                                                    <p className="text-white/50 text-xs mt-2">Pictogramă: {value.icon}</p>
                                                 </div>
                                                 {console.log(value)!! || <div></div>}
                                                 <button
@@ -427,34 +427,34 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                 <div className="space-y-6">
                                     {/* Add New Team */}
                                     <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 space-y-4">
-                                        <h2 className="text-2xl font-bold text-white">Add Team Department</h2>
+                                        <h2 className="text-2xl font-bold text-white">Adăugați departament în echipă</h2>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Role/Department</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Rol/Departament</label>
                                             <Input
                                                 value={teamForm.role}
                                                 onChange={(e) => setTeamForm({ ...teamForm, role: e.target.value })}
-                                                placeholder="e.g., Engineering Team"
+                                                placeholder="de exemplu, Echipa de inginerie"
                                                 className="bg-white/10 border-white/20 text-white placeholder-white/50"
                                             />
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Count</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Numărul de persoane</label>
                                             <Input
                                                 value={teamForm.count}
                                                 onChange={(e) => setTeamForm({ ...teamForm, count: e.target.value })}
-                                                placeholder="e.g., 15"
+                                                placeholder="de exemplu, 15"
                                                 className="bg-white/10 border-white/20 text-white placeholder-white/50"
                                             />
                                         </div>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Description</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Descriere</label>
                                             <textarea
                                                 value={teamForm.description}
                                                 onChange={(e) => setTeamForm({ ...teamForm, description: e.target.value })}
-                                                placeholder="Describe this team..."
+                                                placeholder="Descrieți această echipă..."
                                                 className="w-full p-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400"
                                                 rows={3}
                                             />
@@ -467,7 +467,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         >
                                             {isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                                             <Plus className="w-4 h-4 mr-2" />
-                                            Add Team
+                                            Adăugați echipă
                                         </Button>
                                     </div>
 
@@ -478,7 +478,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                                 <div>
                                                     <h3 className="text-lg font-bold text-white">{team.role}</h3>
                                                     <p className="text-blue-100 text-sm">{team.description}</p>
-                                                    <p className="text-white/50 text-xs mt-2">Team size: {team.count} people</p>
+                                                    <p className="text-white/50 text-xs mt-2">Dimensiunea echipei: {team.count} persoane</p>
                                                 </div>
                                                 <button
                                                     onClick={() => handleDeleteTeam(team.id)}
@@ -498,14 +498,14 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                 <div className="space-y-6">
                                     {/* Add New Service */}
                                     <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 space-y-4">
-                                        <h2 className="text-2xl font-bold text-white">Add Service</h2>
+                                        <h2 className="text-2xl font-bold text-white">Adăugați serviciu</h2>
 
                                         <div>
-                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Service Name</label>
+                                            <label className="block text-sm font-semibold text-blue-100 mb-2">Nume serviciu</label>
                                             <Input
                                                 value={serviceForm}
                                                 onChange={(e) => setServiceForm(e.target.value)}
-                                                placeholder="e.g., Fleet Management & Tracking"
+                                                placeholder="de exemplu, Gestionarea și urmărirea flotei"
                                                 className="bg-white/10 border-white/20 text-white placeholder-white/50"
                                             />
                                         </div>
@@ -517,7 +517,7 @@ export default function EditPageClient({ initialData }: EditPageClientProps) {
                                         >
                                             {isPending && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                                             <Plus className="w-4 h-4 mr-2" />
-                                            Add Service
+                                            Adăugați serviciu
                                         </Button>
                                     </div>
 

@@ -136,10 +136,11 @@ export function DataTable<TData extends { id: number }, TValue>({
                 size={16}
                 stroke="currentColor"
                 style={{ height: "100%" }}
+                className="glass-text"
               />
             </DialogTrigger>
-            <DialogContent style={{ width: "550px", maxWidth: "90vw" }}>
-              <DialogTitle>
+            <DialogContent className="w-[550px] max-w-[90vw] glass-card backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 shadow-2xl rounded-2xl">
+              <DialogTitle className="text-blue-100 font-semibold">
                 {model.charAt(0).toUpperCase() + model.slice(1)}
               </DialogTitle>
               <Addform
